@@ -1,8 +1,8 @@
-#Overview
+# Overview
 
 Market data processing system built in C++. Retrieves real-time data via WebSocket, detects arbitrage opportunities with low-latency processing.
 
-#Key Features
+# Key Features
 
 Real-Time WebSocket Data Handling: Uses websocketpp and boost::asio to manage connections to Kraken and Bybit exchange.
 
@@ -14,7 +14,7 @@ Lock-Free Data Management: Utilizes std::atomic<std::shared_ptr<T>> for non-bloc
 
 Arbitrage Calculation: Computes arbitrage opportunities with fee considerations and configurable thresholds.
 
-#Project Structure
+# Project Structure
 
 1. main.cpp
 
@@ -32,7 +32,7 @@ Handles WebSocket connections and processes/parse incoming trade messages. Atomi
 
 Computes arbitrage opportunities based on price differences and trading fees.
 
-#Design Patterns and Optimizations
+# Design Patterns and Optimizations
 
 Singleton Pattern: Ensures a single instance of market data feeds per exchange.
 
@@ -40,18 +40,16 @@ Observer Pattern: MarketDataHandler observes MarketDataFeed for updates.
 
 Lock-Free Design: Uses std::atomic<std::shared_ptr<T>> for non-blocking updates.
 
-Memory Pooling: Reduces memory allocation overhead for JSON parsing.
-
 Compression Handling: Supports gzip decompression for WebSocket messages.
 
-#Future improvements
+# Future improvements
 
-Memory Pool for JSON Parsing, reducing overheads
-Orderbook including bid/ask
+-Memory Pool for JSON Parsing, reducing overheads
+-Orderbook including bid/ask
 
-#How to Run
+# How to Run
 
-Requirements
+Requirements:
 
 C++, boost::asio, websocketpp, jsoncpp, ZLIb, CURL, OpenSSL, CMake
 
